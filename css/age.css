@@ -1,0 +1,79 @@
+
+@import url('https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans:300,400,600,700|Playfair+Display:400,700|Lato:100,300');
+/*----- Breetty Font -----*/
+@import url('../fonts/Breetty/styles.css');
+/*----bootstrap css ----- */
+@import url('../vendor/bootstrap/bootstrap.css');
+/*----camera-slider---*/
+@import url('../vendor/Camera-master/css/camera.css');
+/*------- Mega menu ------*/
+@import url('../vendor/bootstrap-mega-menu/css/menu.css');
+/*----font awesome -------*/
+@import url('../fonts/font-awesome/css/font-awesome.min.css');
+/*----owl-carousel css----*/
+@import url('../vendor/owl-carousel/owl.carousel.css');
+@import url('../vendor/owl-carousel/owl.theme.css');
+/*-------- animated css ------*/
+@import url('../vendor/WOW-master/css/libs/animate.css');
+/*-------Hover Css --------*/
+@import url('../vendor/hover.css');
+/*--------- flat-icon ---------*/
+@import url('../fonts/icon/font/flaticon.css');
+/*----------- Fancybox css -------*/
+@import url('../vendor/fancybox/dist/jquery.fancybox.min.css');
+/*------------- Map -------------*/
+@import url('../vendor/sanzzy-map/dist/snazzy-info-window.min.css');
+/*--------- Jquery ui ---------*/
+@import url('../vendor/jquery-ui/jquery-ui.min.css');
+
+
+body{
+    background:#000  url(../images/banner/main.jpg) no-repeat center top;
+    font-family: 'Playfair Display', serif;
+}
+#ageWrapper { 
+    opacity:1;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9000;
+    background-color: rgba(0,0,0,.5);
+    transition: visibility 0s ease-in-out .5s, opacity .5s ease-in-out;
+  }
+  
+  #ageWrapper.ageUnknown {
+    visibility: visible;
+    opacity: 1;
+    
+  }
+  
+  #agePopUp {
+    position: fixed;
+    top: 50%;
+    left: 48%;
+    background-color: #fff;
+    text-align: center;
+    padding: 30px;
+    width: 400px;
+    height: 200px;
+    margin-top: -105px;
+    margin-left: -185px;
+    box-sizing: border-box;
+    border-radius: 25px;
+  }
+  
+  #agePopUp a {
+    background-color: black;
+    color: white;
+    padding: 10px 40px;
+    margin-top: 20px;
+    display: inline-block;
+    border-radius: 20px;
+  }
+  
+  .ageConfirmed{
+    z-index:-1;
+    visibility:hidden;
+  }

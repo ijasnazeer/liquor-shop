@@ -1,0 +1,290 @@
+  <!--<?php
+session_start();
+
+require_once('php/php-mailer/PHPMailerAutoload.php');
+
+// Step 1 - Enter your email address below.
+$email = 'anashaneefa@gmail.com';
+
+// If the e-mail is not working, change the debug option to 2 | $debug = 2;
+$debug = 0;
+
+if(isset($_POST['emailSent'])) {
+
+	$subject = $_POST['sub'];
+
+
+		// Step 3 - Configure the fields list that you want to receive on the email.
+		$fields = array(
+			0 => array(
+				'text' => 'Name',
+				'val' => $_POST['name']
+			),
+			1 => array(
+				'text' => 'Email address',
+				'val' => $_POST['email']
+			),
+			2 => array(
+				'text' => 'Phone',
+				'val' => $_POST['phone']
+      ),
+      3 => array(
+				'text' => 'Message',
+				'val' => $_POST['message']
+			)
+		);
+
+		$message = '';
+
+		foreach($fields as $field) {
+			$message .= $field['text'].": " . htmlspecialchars($field['val'], ENT_QUOTES) . "<br>\n";
+		}
+
+		$mail = new PHPMailer(true);
+
+		try {
+
+			$mail->SMTPDebug = $debug;                            // Debug Mode
+
+			// Step 3 (Optional) - If you don't receive the email, try to configure the parameters below:
+
+			//$mail->IsSMTP();                                         // Set mailer to use SMTP
+			//$mail->Host = 'mail.yourserver.com';				       // Specify main and backup server
+			//$mail->SMTPAuth = true;                                  // Enable SMTP authentication
+			//$mail->Username = 'user@example.com';                    // SMTP username
+			//$mail->Password = 'secret';                              // SMTP password
+			//$mail->SMTPSecure = 'tls';                               // Enable encryption, 'ssl' also accepted
+			//$mail->Port = 587;   								       // TCP port to connect to
+
+			$mail->AddAddress($email);	 						       // Add a recipient
+
+			//$mail->AddAddress('person2@domain.com', 'Person 2');     // Add another recipient
+			//$mail->AddCC('person3@domain.com', 'Person 3');          // Add a "Cc" address. 
+			//$mail->AddBCC('person4@domain.com', 'Person 4');         // Add a "Bcc" address. 
+
+			$mail->SetFrom($email, $_POST['name']);
+			$mail->AddReplyTo($_POST['email'], $_POST['name']);
+
+			$mail->IsHTML(true);                                  // Set email format to HTML
+
+			$mail->CharSet = 'UTF-8';
+
+			$mail->Subject = $subject;
+			$mail->Body    = $message;
+
+			// Step 4 - If you don't want to attach any files, remove that code below
+			if (isset($_FILES['attachment']) && $_FILES['attachment']['error'] == UPLOAD_ERR_OK) {
+				$mail->AddAttachment($_FILES['attachment']['tmp_name'], $_FILES['attachment']['name']);
+			}
+
+			$mail->Send();
+
+			$arrResult = array ('response'=>'success');
+
+		} catch (phpmailerException $e) {
+			$arrResult = array ('response'=>'error','errorMessage'=>$e->errorMessage());
+		} catch (Exception $e) {
+			$arrResult = array ('response'=>'error','errorMessage'=>$e->getMessage());
+		}
+}
+?-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sharabha</title>
+<link rel="icon" type="image/png" sizes="56x56" href="images/fav-icon/icon.png">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/responsive.css">
+</head>
+
+<body>
+<div class="main-page-wrapper">
+  <!--<div id="loader-wrapper">
+    <div id="loader"></div>
+  </div> -->
+  <header class="theme-menu-wrapper theme-main-menu-one">
+    <div class="container">
+      <div class="header-wrapper">
+        <nav class="theme-main-menu-wrapper navbar" id="mega-menu-wrapper">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          </div>
+          <div class="collapse navbar-collapse" id="navbar-collapse-1"> <a href="index.html" class="logo"><img src="images/logo/logo.png" alt=""></a>
+            <ul class="nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="products.html">Our Products</a></li>
+              <li class="active"><a href="contact-us.html">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="small-device-logo rythm pulse1"><a href="index.html" class="tran3s"><img src="images/logo/logo5.png" alt=""></a></div>
+      </div>
+    </div>
+  </header>
+  <div class="theme-inner-banner" style="background:url(images/inner-page/banner-3.jpg) no-repeat center">
+    <div class="opacity">
+      <div class="container">
+        <h1>Contact Us</h1>
+      </div>
+    </div>
+  </div>
+  <div class="contact-us">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7 col-md-6 col-xs-12">
+          <div class="contact-us-form">
+
+
+           <!-- <?php
+							if (isset($arrResult)) {
+								if($arrResult['response'] == 'success') {
+								?>
+								<div class="alert alert-success" id="contactSuccess">
+									<strong>Success!</strong> Your message has been sent to us.
+								</div>
+								<?php
+								} else if($arrResult['response'] == 'error') {
+								?>
+								<div class="alert alert-danger" id="contactError">
+									<strong>Error!</strong> There was an error sending your message.
+									<span class="font-size-xs mt-2 d-block" id="mailErrorMessage"><?php echo $arrResult['errorMessage'];?></span>
+								</div>
+								<?php
+								} 
+							}
+							?>-->
+
+            <form action="<?php echo basename($_SERVER['PHP_SELF']); ?>" class="form-validation form-styl-one" autocomplete="off" method="POST" enctype="multipart/form-data">
+            <input type="hidden" value="true" name="emailSent" id="emailSent">
+              <div class="row">
+                <div class="col-sm-6">
+                  <input type="text" placeholder="Your Name" name="name">
+                </div>
+                <div class="col-sm-6">
+                  <input type="email" placeholder="Emaill Address" name="email">
+                </div>
+              </div>
+              <input type="text" placeholder="Subject" name="sub">
+              <input type="text" placeholder="Phone" name="phone">
+              <textarea placeholder="Your Message" name="message"></textarea>
+              <input type="submit" value="SEND">
+            </form>
+          </div>
+          <!-- /.contact-us-form --> 
+        </div>
+        <!-- /.col- -->
+        <div class="col-lg-5 col-md-6 col-xs-12">
+
+
+            <div class="contact-address">
+              <h2>Don’t Hesitate to contact with us for any kind of information</h2>
+              <p><strong>ADDRESS</strong></p>
+              Sharabha Distilleries & Breweries Private Limited<br>
+#41 M S Ramaiah Enclave, 2nd Main Road<br>
+1st Cross, 8th Mile, Nagasandra, Bangalore<br>
+Karnataka State, India 560073            
+            </div>
+
+            <div class="contact-address">
+              <p><strong>CALL US</strong></p>
+              +91 8660 779 219<br>
+              +91 9740 2555 19 
+            </div>
+            
+          <div class="contact-address">
+            <p><strong>EMAIL US</strong></p>
+            devarajhs@gmail.com<br>
+            avinchandran@gmail.com
+          
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Contact alert -->
+    <div class="alert-wrapper" id="alert-success">
+      <div id="success">
+        <button class="closeAlert"><i class="fa fa-times" aria-hidden="true"></i></button>
+        <div class="wrapper">
+          <p>Your message was sent successfully.</p>
+        </div>
+      </div>
+    </div>
+    <!-- End of .alert_wrapper -->
+    <div class="alert-wrapper" id="alert-error">
+      <div id="error">
+        <button class="closeAlert"><i class="fa fa-times" aria-hidden="true"></i></button>
+        <div class="wrapper">
+          <p>Sorry!Something Went Wrong.</p>
+        </div>
+      </div>
+    </div>
+    <!-- End of .alert_wrapper --> 
+  </div>
+  <!-- /.contact-us -->
+  
+  <footer class="theme-main-footer">
+    <div class="top-footer-widget">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-xs-12 footer-logo">
+            <h5>Contact Our <br>Consulting Partner</h5>
+            <p> Devaraj.H.S, CHA  <br>
+              Email: devarajhs@gmail.com</p>
+            <span style="color:white"> </span> </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-12 footer-logo" style="padding-top: 60px;">
+              <p> Avin Chandran  <br>
+                Email: avinchandran@gmail.com</p>
+              <span style="color:white"></span> </div>
+
+          <div class="col-md-2 col-sm-4 col-xs-12 footer-list-widget">
+            <h5>Quick Links</h5>
+            <ul>
+              <li><a href="index.html" class="tran3s">Home</a></li>
+              <li><a href="about.html" class="tran3s">About Us</a></li>
+              <li><a href="products.html" class="tran3s">Our Products</a></li>
+              <li><a href="contact-us.html" class="tran3s">Contact us</a></li>
+            </ul>
+          </div>
+          <div class="col-md-2 col-xs-12 col-xs-12 subscribe-widget">
+            <div>
+              <h5>Follow us</h5>
+              <ul>
+                <li><a href="https://www.facebook.com/Sharabhadb" class="tran3s" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                  <li><a href="https://www.instagram.com/sharabhadb/" class="tran3s" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                  <li><a href="https://wa.me/918660779219" class="tran3s" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-footer">
+      <p>Copyright &copy;2022 <span class="p-color">Sharabha </span></p>
+    </div>
+  </footer>
+
+  <button class="scroll-top tran3s"> <i class="fa fa-angle-up" aria-hidden="true"></i> </button>
+  <script type="text/javascript" src="vendor/jquery.2.2.3.min.js"></script> 
+  <script type="text/javascript" src="vendor/bootstrap/bootstrap.min.js"></script> 
+  <script type='text/javascript' src='vendor/Camera-master/scripts/jquery.mobile.customized.min.js'></script> 
+  <script type='text/javascript' src='vendor/Camera-master/scripts/jquery.easing.1.3.js'></script> 
+  <script type='text/javascript' src='vendor/Camera-master/scripts/camera.min.js'></script> 
+  <script type="text/javascript" src="vendor/bootstrap-mega-menu/js/menu.js"></script> 
+  <script type="text/javascript" src="vendor/Rythm-js/rythm.js"></script> 
+  <script type="text/javascript" src="js/audio.js"></script> 
+  <script type="text/javascript" src="vendor/WOW-master/dist/wow.min.js"></script> 
+  <script type="text/javascript" src="vendor/owl-carousel/owl.carousel.min.js"></script> 
+  <script type="text/javascript" src="vendor/fancybox/dist/jquery.fancybox.min.js"></script> 
+  <script type="text/javascript" src="vendor/jquery.mixitup.min.js"></script> 
+  <script type="text/javascript" src="vendor/contact-form/validate.js"></script> 
+  <script type="text/javascript" src="vendor/contact-form/jquery.form.js"></script> 
+  <script src="vendor/sanzzy-map/dist/snazzy-info-window.min.js"></script> 
+  <script type="text/javascript" src="js/theme.js"></script> 
+</div>
+</body>
+</html>

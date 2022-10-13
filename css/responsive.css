@@ -1,0 +1,160 @@
+/* Responsive CSS Document */
+
+/* 
+    Created on   : 13/08/2019.
+    Theme Name   : Cukape.
+    Description  : Caramello.
+    Version      : 1.0.
+   
+*/
+
+@media (min-width: 992px) {
+  .container {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+  }
+
+}
+@media (min-width: 1200px) and (max-width: 1290px) {
+  .box-layout {padding: 0;}
+}
+@media (min-width: 992px) and (max-width: 1090px) {
+  .box-layout {padding: 0;}
+}
+@media (max-width: 1199px) {
+  .portfolio-box-style .row {margin: 0 -10px;}
+  .portfolio-box-style .item {margin: 0 10px;}
+  .portfolio-box-style {padding: 0 15px;}
+  .top-footer-widget .subscribe-widget>div {padding-left: 0;}
+}
+/*(max-width: 1199px)*/
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  #mega-menu-wrapper .nav>li {margin: 0 15px;}
+  #mega-menu-wrapper .nav>li.dropdown-holder .sub-menu,
+  #mega-menu-wrapper .nav>li.dropdown-holder .sub-menu .second-sub-menu {width: 200px;}
+  .client-section .client-text {padding-left: 20px;padding-right: 20px;}
+  .blog-details-content .mark-text {padding-right: 30px;}
+}
+
+/*(min-width: 992px) and (max-width: 1199px)*/
+
+@media (max-width: 991px) {
+  .theme-main-menu-one .small-device-logo {display: block;}
+  header.theme-main-menu-one {padding-top: 15px;}
+  .theme-main-menu-one #mega-menu-wrapper .nav>li:before {display: none;}
+  #mega-menu-wrapper .nav li.menu-inner-logo {display: none;}
+  .delicious-food-section .single-item p br,.theme-main-menu-two #mega-menu-wrapper {display: none;}
+  .theme-section-title a {position: static;margin-top: 25px;}
+  .about-us-section img.pizza {margin: 0 auto; padding-bottom:50px;}
+  .about-us-section {margin-bottom: 100px;}
+  .box-layout {padding: 0 15px;}
+  .theme-main-menu-two .menu-right-widget {position: static;float: right;}
+  .theme-main-menu-two .logo {position: static;float: left;}
+  .theme-main-menu-two {padding: 15px 0;}
+  .theme-menu-wrapper.fixed.white-bg {padding: 5px 15px;}
+  .single-portfolio .main-wrapper-box {width: 100%;}
+  .about-us-section .row .row {margin-bottom: 30px;}
+  .our-food-menu .food-menu-wrapper .tab-content ul li {width: 100%;}
+  .shop-sidebar,.blog-sidebar {margin-top: 0px;}
+  .contact-us-form {padding: 0 0 60px 0;}
+  .logo{
+	  display:none;
+ 
+  }
+ .nav{
+	 float:inherit;
+
+ }
+ .about-us-section{
+	 margin-top:0;
+
+ }
+ .single-portfolio .col-md-7{
+	 padding-left:15px;
+ }
+} 
+/*(max-width: 991px)*/
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .our-team.team-style-two .team-member .image {width: 220px;height: 220px;}
+}
+
+/*(min-width: 768px) and (max-width: 991px)*/
+@media (max-width: 767px) {
+  .delicious-food-section.fix-top-margin {padding-top: 80px;}
+  .banner-one,.client-section,.theme-inner-banner {margin-bottom: 50px;}
+  .delicious-food-section .row {margin-bottom: 50px;}
+  .our-portfolio .theme-section-title {margin: 60px 0 70px 0;}
+  .theme-section-title p br {display: none;}
+  .about-us-section,.map-canvas {margin-top: 100px;}
+  .short-banner .opacity h2 br {display: none;}
+  .short-banner .opacity {padding: 100px 0 100px 0;}
+  #client-slider .owl-dots {margin-top: 30px;}
+  .client-section .opacity {padding: 80px 0 60px 0;}
+  #hidden-aside-menu .logo {margin: 60px 0 40px 0;}
+  .aside-menu-wrapper .main-nav-wrapper li a {padding: 0 15px;}
+  .aside-menu-wrapper .main-nav-wrapper>li .expander {right: 20px;}
+  .aside-menu-wrapper ul .dropdown-holder .sub-menu li a {padding-left: 60px;}
+  .aside-menu-wrapper .main-nav-wrapper li a span.fa {margin-right: 12px;}
+  .short-banner .opacity h2 {font-size: 40px;line-height: 55px;}
+  .theme-inner-banner .opacity {padding: 150px 0 100px 0;}
+  .theme-inner-banner .opacity h1 {font-size: 50px;margin-bottom: 15px;}
+  .theme-inner-banner .opacity ul li {font-size: 18px;}
+  .mixitUp-menu li {margin: 5px 10px;}
+  .mixitUp-menu {margin-bottom: 60px;}
+  .single-portfolio .main-wrapper-box .row {margin-top: 30px;}
+  .our-portfolio.inner-page.portfolio-v1 {padding-bottom: 50px;}
+  .single-portfolio .main-wrapper-box,.partner-section {padding-bottom: 80px;}
+  .our-team .theme-section-title {padding: 0px 0 20px 0;}
+  .team-inner-page {padding-top: 100px;}
+  .our-food-menu .food-menu-wrapper .nav-tabs li a {padding: 0 0 20px 0;}
+  .our-food-menu .food-menu-wrapper .nav-tabs li a {font-size: 15px;letter-spacing: 1px;}
+  .our-food-menu .food-menu-wrapper .nav-tabs li a i {font-size: 45px;margin-bottom: 5px;}
+  .our-food-menu .food-menu-wrapper .tab-content {margin: 80px 0 100px 0;}
+  .pricing-plan .pricing-title {margin-bottom: 20px;}
+  .pricing-plan,.popular-faq,.inner-blog-page {padding-bottom: 100px;}
+  .shop-page.full-width {padding: 0 15px 80px 15px;}
+  .product-details .product-info h3 {margin-top: 35px;}
+  .error-page:before {width: 100%;}
+  .blog-sidebar h3 {margin: 25px 0;}
+  .blog-sidebar .border-box {padding-bottom: 30px;}
+  .blog-details-content .mark-text {padding: 18px 15px 30px 40px;}
+  .blog-details-content .mark-text:before {width: 25px;top: 45px;left: 5px;}
+  .banner-one,.banner-two {height: calc(80vh - 0px) !important;}
+  .banner-one h3 {font-size: 35px;margin-bottom: 10px;}
+  .banner-one h1 {font-size: 50px;}
+  .banner-one p {font-size: 16px;}
+}
+/*(max-width: 767px)*/
+
+@media (max-width: 650px) {
+  #success, #error {
+      width: 86%;
+      height: auto;
+      top: calc(50% - 50px);
+      left: 7%;
+      padding: 30px 10px;
+  }
+  .banner-two .round-box {width: 280px;height: 280px;margin: -140px 0 0 -140px;}
+  .banner-two h1 {font-size: 60px;line-height: 65px;}
+  .banner-two {height: 500px !important;}
+    .about-us-section img.pizza { width:70%;}
+
+}
+@media (max-width: 500px) {
+  .our-food-menu .food-menu-wrapper .nav-tabs li {width: 33.3333333%;}
+  .shop-product-wrapper .col-xs-6,.blog-details-content .tag-section ul {width: 100%;}
+  .our-blog .single-blog-grid {margin-bottom: 35px;}
+  .blog-details-content .comment-box .single-comment.reply-comment {margin-left: 15px;}
+}
+@media (max-width: 450px) {
+  .delicious-food-section .col-xs-6,.our-portfolio .col-xs-6,
+  .our-food-menu .food-menu-wrapper .tab-content ul li div h4 strong {width: 100%;}
+  .our-food-menu .food-menu-wrapper .tab-content ul li div h4 strong {margin-top: 10px;}
+  .shop-details .related-product h3 {margin-bottom: 85px;}
+  .blog-details-content .comment-box .single-comment .comment .reply {margin-top: 10px;position: static;}
+}
+@media (max-width: 400px) {
+  .our-team .col-xs-6,#hidden-aside-menu {width: 100%;}
+}
